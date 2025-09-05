@@ -88,12 +88,11 @@ This project currently includes **one training run**.
 - **Policy loss**  
 - **KL divergence**  
 
-📈 *[Insert Graph: Reward vs Step]*  
-📉 *[Insert Graph: KL Divergence vs Step]*  
-📊 *[Insert Graph: Loss vs Step]*  
-🪙 *[Insert Graph: Policy Loss vs Step]*  
+📈 Training Graphs:  
+![All Graphs](assets/all_graphs_rl.png)  
 
-Logs and visualizations are stored in the `assets/` folder.  
+🪙 Policy Loss:  
+![Policy Loss](assets/loss_rl.png)  
 
 ---
 
@@ -101,15 +100,15 @@ Logs and visualizations are stored in the `assets/` folder.
 
 After training, the model was tested on **unseen prompts** with style-transfer objectives.  
 
-### Example Runs
+### Base vs Fine-Tuned Comparison
 
-| **Test** | **Input** | **Requested Style** | **Model Output** |
-|----------|-----------|----------------------|------------------|
-| 1 | The server is down, which means nobody can log in to work remotely. | Humorous Gen-Z slang | The server is down, so we're all stuck at home, unable to log in remotely. Please fix the situation pronto. |
-| 2 | I regret to inform you that your manuscript does not meet our publication standards. | Shakespearean tragic monologue | Ah, poor soul, alas, I must inform you that your work does not please our esteemed peers. We, the humble editors, are but a few, yet we do our best to discern the finest sentiments amidst the myriad of submissions. Please accept this as a sign of our respect and admiration for your literary endeavors. It is with a heavy heart that we must part ways, for we do not believe your manuscript to be worthy of our esteemed journal's prestigious publication.|
-| 3 | Hey dude, wanna grab burritos later? Maybe around 7? | Diplomatic correspondence |  Dear [Recipient's Name], Thank you for reaching out. I would be delighted to meet for burritos at approximately 7 PM. Please let me know if you are available at that time, and we can discuss further details. Best regards, [Your Name]|
-| 4 | The cat knocked over my coffee mug and now there's liquid all over my keyboard. | Haiku | The cat again spills / my coffee, now the keyboard's / covered in brown ink. |
-| 5 | We are writing to confirm receipt of your application. | Sarcastic breakup text | Congratulations, you’ve officially been dumped. |
+| **Test** | **Input Prompt** | **Requested Style** | **Base Qwen2.5-1.5B Output** | **Fine-Tuned RL Model Output** |
+|----------|------------------|----------------------|-------------------------------|--------------------------------|
+| 1 | The server is down, which means nobody can log in to work remotely. | Humorous Gen-Z slang | *The server is down and people cannot log in remotely. It is causing problems and needs to be fixed.* | *The server is down, so we're all stuck at home, unable to log in remotely. This is turning into a major headache for the team. Please fix the situation pronto.* |
+| 2 | I regret to inform you that your manuscript does not meet our publication standards. | Shakespearean tragic monologue | *We regret to inform you that the manuscript cannot be accepted at this time. Thank you for your submission.* | *Ah, poor soul, alas, I must inform you that your work does not please our esteemed peers. We, the humble editors, are but a few, yet we do our best to discern the finest sentiments amidst the myriad of submissions. Please accept this as a sign of our respect and admiration for your literary endeavors. It is with a heavy heart that we must part ways, for we do not believe your manuscript to be worthy of our esteemed journal's prestigious publication.* |
+| 3 | Hey dude, wanna grab burritos later? Maybe around 7? | Diplomatic correspondence | *Hey, do you want to grab burritos later around 7?* | *Dear [Recipient's Name], Thank you for reaching out. I would be delighted to meet for burritos at approximately 7 PM. Please let me know if you are available at that time, and we can discuss further details. Best regards,  [Your Name]* |
+| 4 | The cat knocked over my coffee mug and now there's brown liquid all over my keyboard. | Haiku | *The cat knocked over my coffee and spilled it on the keyboard. It was frustrating.* | *The cat again spills / my coffee, now the keyboard's / covered in brown ink.* |
+| 5 | We are writing to confirm receipt of your application for the position of Senior Developer. | Sarcastic breakup text | *We confirm receipt of your application and will review your materials for the Senior Developer position.* | *We confirm receipt of your application... Congratulations, you’ve officially been dumped.* |
 
 ---
 
