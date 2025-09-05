@@ -38,9 +38,6 @@ Unlike traditional RLHF pipelines that rely on costly labeled datasets, this pro
 4. **GRPO Training**  
    - GRPO applies policy gradients with KL regularization for stability.  
    - Rewards from RULER guide the optimization loop.  
-
-📊 *[Insert Pipeline Diagram: Prompt → Model → RULER → GRPO Update → Fine-tuned Model]*  
-
 ---
 
 ## ✨ Key Features
